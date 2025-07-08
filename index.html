@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>AMs</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">Features</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>BATANGAS STATE UNIVERSITY ATHLETE MONITORING SYSTEM</h1>
+            </div>
+        </section>
+
+
+
+        <section id="features" class="content-section">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="cards">
+                    <div class="card" onclick="showOCRContent()">
+                        <div class="card-icon">📄</div>
+                        <h3>OCR API</h3>
+                        <p>Extract text from images and documents with high accuracy using advanced OCR technology.</p>
+                    </div>
+                    
+                </div>
+                
+                <!-- OCR API Content Section -->
+                <div id="ocr-content" class="feature-content" style="display: none;">
+                    <div class="feature-header">
+                        <h2>OCR Text Extraction</h2>
+                        <button class="close-btn" onclick="hideFeatureContent()">×</button>
+                    </div>
+                    <div class="feature-body">
+                        <div class="ocr-container">
+                            <div class="upload-section">
+                                <h3>Upload Image</h3>
+                                <div class="upload-area" id="upload-area">
+                                    <div class="upload-icon">📁</div>
+                                    <p>Drag and drop an image here or click to browse</p>
+                                    <input type="file" id="file-input" accept="image/*,.pdf" style="display: none;">
+                                    <button class="upload-btn" onclick="document.getElementById('file-input').click()">Choose File</button>
+                                </div>
+                                <div class="file-info" id="file-info" style="display: none;">
+                                    <p><strong>Selected file:</strong> <span id="file-name"></span></p>
+                                    <div class="image-preview" id="image-preview" style="display: none;">
+                                        <img id="preview-img" alt="Preview" style="max-width: 100%; max-height: 200px; border-radius: 8px;">
+                                    </div>
+                                    <button class="process-btn" onclick="processOCR()">Process OCR</button>
+                                </div>
+                            </div>
+                            
+                            <div class="output-section">
+                                <h3>OCR Output</h3>
+                                <div class="output-container">
+                                    <div class="output-header">
+                                        <span>Extracted Text</span>
+                                        <div class="output-actions">
+                                            <button class="copy-btn" onclick="copyOutput()">Copy</button>
+                                            <button class="pdf-btn" onclick="convertToPDF()">Convert to PDF</button>
+                                        </div>
+                                    </div>
+                                    <div class="output-text" id="output-text">
+                                        <p class="placeholder-text">Upload an image to extract text...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Content Section -->
+                <div id="dashboard-content" class="feature-content" style="display: none;">
+                    <div class="feature-header">
+                        <h2>Dashboard Overview</h2>
+                        <button class="close-btn" onclick="hideFeatureContent()">×</button>
+                    </div>
+                    <div class="feature-body">
+                        <p>Dashboard content will be displayed here...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>BSIT BA-3302 2025 All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script src="https://unpkg.com/tesseract.js@v4.1.1/dist/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/ocr.js"></script>
+<script src="js/pdf.js"></script>
+<script src="js/copy.js"></script>
+<script src="js/ui.js"></script>
+<script type="module" src="js/main.js"></script>
+ 
