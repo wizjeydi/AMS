@@ -1,4 +1,3 @@
-/ ocr.js
 // OCR Processing
 
 export function processOCR() {
