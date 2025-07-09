@@ -95,7 +95,7 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -136,6 +136,21 @@ body {
     background: #b10d1f;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(253, 184, 19, 0.3);
+}
+
+.hero-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.cta-button.alt {
+    background: #059669;
+    color: #fff;
+}
+
+.cta-button.alt:hover {
+    background: #047857;
 }
 
 /* Content Sections */
@@ -632,4 +647,4 @@ body {
     .contact-form {
         padding: 1.5rem;
     }
-} 
+}
